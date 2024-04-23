@@ -1,1 +1,88 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.main-content {
+  width: 75%; // Set width to 75% of the viewport
+  margin: 0 auto; // Center the div horizontally
+  display: flex; // Enable flexbox to manage children
+  flex-direction: column; // Stack children vertically
+  align-items: center; // Center children horizontally
+}
+
+.app-accordion {
+  width: 100%; // Accordions take full width of their container
+  margin-bottom: 5px; // Space between accordions
+  margin-top: 5px;
+}
+
+// Accordions
+
+.app-accordion {
+  background-color: #505050;
+
+  .mat-expansion-panel {
+    background-color: #ecdd56;
+    border: 1px solid #000000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    .mat-expansion-panel-header {
+      background-color: #ecdd56;
+      color: black;
+    }
+  }
+
+  .mat-accordion {
+    color: #3e3e3a;
+  }
+}
+
+.song-overview {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px; // Adds padding inside the header for better spacing
+}
+
+.song-details {
+  padding: 20px; // Padding inside the content area for better spacing
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.song-overview {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.page-number {
+  font-weight: bold;
+  color: #3e3e3a;
+}
+
+.song-title {
+  flex-grow: 1;
+  text-align: right;
+  color: #3e3e3a;
+}
+
+.song-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
