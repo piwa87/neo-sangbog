@@ -1,9 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './header/header.component';
 import { AccordionComponent } from './accordion/accordion.component';
-import { MOCK_SONGS } from './data/mock-songs';
-import { CommonModule } from '@angular/common';
+import { SONGS } from './db/all-songs';
+import { HeaderComponent } from './header/header.component';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,5 @@ import { CommonModule } from '@angular/common';
   imports: [RouterOutlet, HeaderComponent, AccordionComponent, CommonModule],
 })
 export class AppComponent {
-  title = 'sangbog';
-  allSongs = MOCK_SONGS;
-  theSong = MOCK_SONGS[0];
+  allSongs = SONGS;
 }

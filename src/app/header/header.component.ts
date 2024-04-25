@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  title: string = 'Neokatehumenal Sangbog';
+  title: string = 'Den Neokatekumenale Vandrings Sangbog';
 }

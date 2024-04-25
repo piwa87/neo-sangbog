@@ -1,22 +1,25 @@
-<!-- src/app/accordion/accordion.component.html -->
-<mat-accordion multi="true" class="app-accordion">
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
+<mat-accordion class="app-accordion" [multi]="false">
+  <mat-expansion-panel
+    [ngStyle]="{ 'background-color': getBackgroundColor(song.page) }"
+  >
+    <mat-expansion-panel-header
+      [ngStyle]="{ 'background-color': getBackgroundColor(song.page) }"
+    >
       <mat-panel-title>
         <div class="song-overview">
-          <span class="page-number">{{ song.pageNumber }}</span>
+          <span class="page-number">{{ song.page }}</span>
           <span class="song-title">{{ song.title }}</span>
         </div>
       </mat-panel-title>
     </mat-expansion-panel-header>
 
     <div class="song-details">
-      <img [src]="song.picturePath" alt="Song picture" />
+      <img [src]="song.text" alt="Song picture" />
+      <img *ngIf="song.textExtra" [src]="song.textExtra" />
       <audio controls>
-        <source [src]="song.musicFilePath" type="audio/mpeg" />
+        <source [src]="song.music" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
-      <p>{{ song.title }} - Details</p>
     </div>
   </mat-expansion-panel>
 </mat-accordion>

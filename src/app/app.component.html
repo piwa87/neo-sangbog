@@ -1,6 +1,6 @@
 <app-header />
-<div>
-  <div class="main-content" *ngFor="let song of allSongs">
-    <app-accordion class="app-accordion" [song]="song" />
+<div class="main-content">
+  <div *ngFor="let song of allSongs">
+    <app-accordion [song]="song" class="app-accordion" />
   </div>
 </div>
