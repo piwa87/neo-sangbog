@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { Song } from '../models/song.interface';
 import { CommonModule } from '@angular/common';
@@ -12,6 +12,12 @@ import { CommonModule } from '@angular/common';
 })
 export class AccordionComponent {
   @Input() song!: Song;
+  @Input() isActive: boolean = false;
+  @Output() toggle = new EventEmitter<void>();
+
+  onClickHeader(): void {
+    this.toggle.emit();
+  }
 
   getBackgroundColor(pageNumber: number): string {
     const darkGreyPages = [207, 208, 273, 274, 283, 284];

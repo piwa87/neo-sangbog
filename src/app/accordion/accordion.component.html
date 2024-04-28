@@ -1,6 +1,8 @@
 <mat-accordion class="app-accordion" [multi]="false">
   <mat-expansion-panel
     [ngStyle]="{ 'background-color': getBackgroundColor(song.page) }"
+    [expanded]="isActive"
+    (opened)="onClickHeader()"
   >
     <mat-expansion-panel-header
       [ngStyle]="{ 'background-color': getBackgroundColor(song.page) }"

@@ -1,6 +1,20 @@
 <app-header />
 <div class="main-content">
-  <div *ngFor="let song of allSongs">
-    <app-accordion [song]="song" class="app-accordion" />
+  <mat-form-field appearance="fill">
+    <mat-label>Filter songs by title</mat-label>
+    <input
+      matInput
+      [(ngModel)]="filterText"
+      (ngModelChange)="filterSongs()"
+      placeholder="Type to filter songs"
+    />
+  </mat-form-field>
+  <div *ngFor="let song of filteredSongs">
+    <app-accordion
+      [song]="song"
+      [isActive]="activeSongId === song.id"
+      (toggle)="toggleAccordion(song.id)"
+      class="app-accordion"
+    />
   </div>
 </div>
