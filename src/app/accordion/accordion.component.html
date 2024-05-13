@@ -3,6 +3,7 @@
     [ngStyle]="{ 'background-color': getBackgroundColor(song.page) }"
     [expanded]="isActive"
     (opened)="onClickHeader()"
+    (closed)="stopAudio()"
   >
     <mat-expansion-panel-header
       [ngStyle]="{ 'background-color': getBackgroundColor(song.page) }"
@@ -18,7 +19,7 @@
     <div class="song-details">
       <img [src]="song.text" alt="Song picture" />
       <img *ngIf="song.textExtra" [src]="song.textExtra" />
-      <audio controls>
+      <audio #audioPlayer controls>
         <source [src]="song.music" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>

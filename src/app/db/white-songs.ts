@@ -2,6 +2,13 @@ import { Song } from '../models/song.interface';
 
 export const WHITE_SONGS: Song[] = [
   {
+    id: 34,
+    page: 34,
+    title: 'SALME 103 - MIN SJAEL VELSIGN DIN GUD (Ps 103)',
+    music: 'assets/music/34.mp3',
+    text: 'assets/text/34.jpg',
+  },
+  {
     id: 35,
     page: 35,
     title: 'HERRE DU ER MIN GUD. (Es 25,1-8)',

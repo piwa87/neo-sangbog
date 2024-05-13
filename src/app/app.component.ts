@@ -9,6 +9,7 @@ import { YELLOW_SONGS } from './db/yellow-songs';
 import { GREEN_SONGS } from './db/green-songs';
 import { BLUE_SONGS } from './db/blue-songs';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { FormsModule } from '@angular/forms';
@@ -19,14 +20,15 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   imports: [
-    RouterOutlet,
-    HeaderComponent,
     AccordionComponent,
     CommonModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatExpansionModule,
     FormsModule,
+    HeaderComponent,
+    MatButtonModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatInputModule,
+    RouterOutlet,
   ],
 })
 export class AppComponent {
@@ -50,8 +52,31 @@ export class AppComponent {
   }
 
   filterSongs(): void {
-    this.filteredSongs = this.allSongs.filter((song) =>
-      song.title.toLowerCase().includes(this.filterText.toLowerCase())
+    this.filteredSongs = this.allSongs.filter(
+      (song) =>
+        song.title.toLowerCase().includes(this.filterText.toLowerCase()) ||
+        song.page.toString().includes(this.filterText) ||
+        song.lyrics?.toLowerCase().includes(this.filterText.toLowerCase())
     );
+  }
+
+  filterByCategory(category: string): void {
+    switch (category) {
+      case 'Gule':
+        this.filteredSongs = YELLOW_SONGS;
+        break;
+      case 'Hvide':
+        this.filteredSongs = WHITE_SONGS;
+        break;
+      case 'Grønne':
+        this.filteredSongs = GREEN_SONGS;
+        break;
+      case 'Blå':
+        this.filteredSongs = BLUE_SONGS;
+        break;
+      default:
+        this.filteredSongs = this.allSongs;
+    }
+    // this.filterSongs(); // Re-apply text filter if any
   }
 }

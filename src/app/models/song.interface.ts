@@ -5,4 +5,5 @@ export interface Song {
   music: string;
   text: string;
   textExtra?: string;
+  lyrics?: string;
 }

@@ -1,5 +1,30 @@
 <app-header />
 <div class="main-content">
+  <div style="display: flex; justify-content: space-between">
+    <button mat-raised-button color="primary" (click)="filterByCategory('All')">
+      All
+    </button>
+    <button mat-raised-button color="accent" (click)="filterByCategory('Gule')">
+      Gule sange
+    </button>
+    <button
+      mat-raised-button
+      color="accent"
+      (click)="filterByCategory('Hvide')"
+    >
+      Hvide Sange
+    </button>
+    <button
+      mat-raised-button
+      color="accent"
+      (click)="filterByCategory('Grønne')"
+    >
+      Grønne sange
+    </button>
+    <button mat-raised-button color="accent" (click)="filterByCategory('Blå')">
+      Blå sange
+    </button>
+  </div>
   <mat-form-field appearance="fill">
     <mat-label>Filter songs by title</mat-label>
     <input

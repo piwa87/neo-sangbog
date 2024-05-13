@@ -7,5 +7,6 @@ export const BLUE_SONGS: Song[] = [
     title: 'KYS DU MIG (Hojs 1,2 flg.)',
     music: 'assets/music/267.mp3',
     text: 'assets/text/267.jpg',
+    lyrics: 'løb min kære ven, som en gazelle',
   },
 ];
