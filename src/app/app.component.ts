@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AccordionComponent } from './accordion/accordion.component';
 import { HeaderComponent } from './header/header.component';
-import { Song } from './models/song.interface';
+import { Song } from './models/song.model';
 import { WHITE_SONGS } from './db/white-songs';
 import { YELLOW_SONGS } from './db/yellow-songs';
 import { GREEN_SONGS } from './db/green-songs';

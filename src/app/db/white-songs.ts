@@ -1,4 +1,4 @@
-import { Song } from '../models/song.interface';
+import { Song } from '../models/song.model';
 
 export const WHITE_SONGS: Song[] = [
   {

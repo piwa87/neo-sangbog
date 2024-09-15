@@ -7,7 +7,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { Song } from '../models/song.interface';
+import { Song } from '../models/song.model';
 import { CommonModule } from '@angular/common';
 import { Lightbox, LightboxModule } from 'ngx-lightbox';
 
